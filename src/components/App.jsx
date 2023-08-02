@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 import { Navigation } from './Navigation';
-import { Home } from 'pages/Home';
-import { Movies } from 'pages/Movies';
-import { MovieDetails } from 'pages/MovieDetails';
-import { Cast } from 'pages/Cast';
-import { Reviews } from 'pages/Reviews';
-import { NotFound } from 'pages/NotFound';
+import { Home } from 'pages/Home/Home';
+import { Movies } from 'pages/Movies/Movies';
+import { MovieDetails } from 'pages/MovieDetails/MovieDetails';
+import { Cast } from 'pages/Cast/Cast';
+import { Reviews } from 'pages/Reviews/Reviews';
+import { NotFound } from 'pages/NotFound/NotFound';
 
 export const App = () => {
   return (
