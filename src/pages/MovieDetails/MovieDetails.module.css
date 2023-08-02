@@ -6,7 +6,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+}
 
 /* .info {
   width: 500px;
@@ -23,7 +23,7 @@
 
 .additionalInformation {
   margin: 20px;
-   display: flex;
+  display: flex;
   flex-direction: column;
 }
 
@@ -31,3 +31,13 @@ a {
   color: black; /* Ustawia kolor na czarny */
   text-decoration: none; /* Usuwa podkreślenie */
 }
+
+.goBack {
+  cursor: pointer;
+  margin: 10px 0 0 10px;
+  border: 1px solid #7b838c;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+

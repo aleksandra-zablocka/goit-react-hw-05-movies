@@ -15,6 +15,7 @@
     align-items: center; 
     justify-content: center;
     width: 200px;
+    font-size: 13px;
     height: 355px;
     border: 1px solid #ccc;
     border-radius: 5px;

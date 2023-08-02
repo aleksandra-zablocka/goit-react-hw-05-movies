@@ -29,17 +29,6 @@ export const Movies = () => {
     setSearchQuery(title);
   };
 
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   fetchSearch(searchQuery) // Wywołaj funkcję fetchSearch z aktualną wartością searchQuery
-  //     .then(data => {
-  //       setMovies(data.results);
-  //     })
-  //     .catch(error => {
-  //       console.log('An error occurred', error);
-  //     });
-  // };
-
   const imageUrlBase = 'https://image.tmdb.org/t/p/';
   const imageSize = 'w500';
 
@@ -55,7 +44,7 @@ export const Movies = () => {
       />
       {/* <button type="submit">Search</button> */}
       {/* </form> */}
-      <div className={css.results}>Results</div>
+      <div className={css.results}> {movies.length > 0 ? 'Results' : null}</div>
       <div className={css.wrapper}>
         {movies.map(movie => (
           <Link

@@ -1,21 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { fetchMovieDetails } from 'api';
-import { useParams, Link, Outlet } from 'react-router-dom';
+import { useParams, Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import css from './MovieDetails.module.css';
 
 export const MovieDetails = () => {
-  const { movieId } = useParams(); // Pobieramy identyfikator filmu z URL-u
+  const { movieId } = useParams(); 
   const [movie, setMovie] = useState(null);
+  const location = useLocation();
+
+console.log(location)
+const navigate = useNavigate();
 
   useEffect(() => {
-    fetchMovieDetails(movieId) // Przekazujemy identyfikator filmu do funkcji fetchMovieDetails
+    fetchMovieDetails(movieId) 
       .then(data => {
         setMovie(data);
       })
       .catch(error => {
         console.log('An error occurred', error);
       });
-  }, [movieId]); // Dodajemy movieId do zależności, aby reagować na jego zmianę
+  }, [movieId]); 
+
+  const handleGoBack = () => {
+    if (location.state?.from) {
+      return navigate(location.state.from);
+    }
+    navigate(-1);
+  };
 
   if (!movie) {
     return <div>Loading...</div>;
@@ -26,6 +37,9 @@ export const MovieDetails = () => {
 
   return (
     <div>
+      <button className={css.goBack} onClick={handleGoBack}>
+        Go back
+      </button>
       <div className={css.wrapper}>
         <div>
           <img
