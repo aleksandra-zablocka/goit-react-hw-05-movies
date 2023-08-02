@@ -53,7 +53,6 @@ export const fetchMovieDetails = async movieId => {
 
     const data = await response.json();
     return data;
-
   } catch (error) {
     console.log('An error occurred', error);
     return error;
@@ -61,7 +60,7 @@ export const fetchMovieDetails = async movieId => {
 };
 
 export const fetchCast = async movieId => {
-   const options = {
+  const options = {
     method: 'GET',
     headers: {
       accept: 'application/json',
@@ -95,38 +94,65 @@ export const fetchCast = async movieId => {
   }
 };
 
-
 export const fetchReviews = async movieId => {
   const options = {
-   method: 'GET',
-   headers: {
-     accept: 'application/json',
-     Authorization: `Bearer ${API_KEY_CODE}`,
-   },
- };
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${API_KEY_CODE}`,
+    },
+  };
 
- try {
-   const [movieResponse, reviewResponse] = await Promise.all([
-     fetch(
-             `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,
-       options
-     ),
-     fetch(
-       `https://api.themoviedb.org/3/movie/${movieId}/reviews?language=en-US`,
-       options
-     ),
-   ]);
+  try {
+    const [movieResponse, reviewResponse] = await Promise.all([
+      fetch(
+        `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,
+        options
+      ),
+      fetch(
+        `https://api.themoviedb.org/3/movie/${movieId}/reviews?language=en-US`,
+        options
+      ),
+    ]);
 
-   if (!movieResponse.ok || !reviewResponse.ok) {
-     throw new Error('Network response failed');
-   }
+    if (!movieResponse.ok || !reviewResponse.ok) {
+      throw new Error('Network response failed');
+    }
 
-   const movieData = await movieResponse.json();
-   const reviewData = await reviewResponse.json();
+    const movieData = await movieResponse.json();
+    const reviewData = await reviewResponse.json();
 
-   return { movie: movieData, review: reviewData.results };
- } catch (error) {
-   console.log('An error occurred', error);
-   return error;
- }
+    return { movie: movieData, review: reviewData.results };
+  } catch (error) {
+    console.log('An error occurred', error);
+    return error;
+  }
+};
+
+export const fetchSearch = async (query) => {
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${API_KEY_CODE}`,
+    },
+  };
+
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY_CODE}&query=${query}`,
+      options
+    );
+
+    if (!response.ok) {
+      throw new Error('Network response failed');
+    }
+
+    const data = await response.json();
+    return data;
+
+  } catch (error) {
+    console.log('An error occurred', error);
+    return error;
+  }
 };
