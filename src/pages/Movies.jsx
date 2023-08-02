@@ -1,9 +1,11 @@
-import { useSearchParams, Link, useLocation } from 'react-router-dom';
+// import { useSearchParams, Link, useLocation } from 'react-router-dom';
 import { fetchMovies } from 'api';
 import React, { useState, useEffect } from 'react';
 
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
+
+console.log(movies);
 
   useEffect(() => {
     fetchMovies()
