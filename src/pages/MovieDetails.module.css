@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  /* align-items: center; */
+}
+
+.info {
+  width: 500px;
+}
+
+.genres {
+  display: flex;
+  gap: 10px;
+}
+
+.genre {
+  margin: 0;
+}

@@ -1,0 +1,25 @@
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.navigation a {
+  color: #333;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+.navigation a:hover {
+  background-color: #ddd;
+}
+
+.navigation a.active {
+  background-color: #007bff;
+  color: #fff;
+}
