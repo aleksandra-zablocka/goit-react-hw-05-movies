@@ -1,13 +1,16 @@
 .wrapper {
+  margin: 10px;
   display: flex;
   gap: 30px;
   padding: 20px;
-  /* align-items: center; */
-}
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
-.info {
+/* .info {
   width: 500px;
-}
+} */
 
 .genres {
   display: flex;
@@ -16,4 +19,15 @@
 
 .genre {
   margin: 0;
+}
+
+.additionalInformation {
+  margin: 20px;
+   display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: black; /* Ustawia kolor na czarny */
+  text-decoration: none; /* Usuwa podkreślenie */
 }

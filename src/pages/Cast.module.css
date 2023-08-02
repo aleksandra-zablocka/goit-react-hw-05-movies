@@ -1,0 +1,32 @@
+.wrapper {
+    margin: 20px;
+  }
+  
+  .cast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 10px;
+  }
+  
+  .castCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    width: 200px;
+    height: 355px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .castPoster {
+    width: 90%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .castCard p {
+    margin: 5px 0;
+  }
