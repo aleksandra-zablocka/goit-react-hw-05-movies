@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/866.9c765d3c.chunk.css","mappings":"AAAA,wBACI,WACF,CAEF,4BACI,kBACJ,CAEA,uBACI,QACJ","sources":["pages/Reviews/Reviews.module.css"],"sourcesContent":[".wrapper {\n    margin: 20px;\n  }\n  \n.reviewTitle {\n    margin-bottom: 10px;\n}\n\n.review {\n    margin: 0;\n}\n"],"names":[],"sourceRoot":""}
