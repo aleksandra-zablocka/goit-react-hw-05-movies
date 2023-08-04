@@ -3,7 +3,7 @@ import { fetchMovieDetails } from 'api';
 import { useParams, Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import css from './MovieDetails.module.css';
 
-export const MovieDetails = () => {
+ const MovieDetails = () => {
   const { movieId } = useParams(); 
   const [movie, setMovie] = useState(null);
   const location = useLocation();
@@ -73,3 +73,5 @@ const navigate = useNavigate();
     </div>
   );
 };
+
+export default MovieDetails;

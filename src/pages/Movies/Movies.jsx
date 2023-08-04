@@ -3,7 +3,7 @@ import { fetchSearch } from 'api';
 import React, { useState, useEffect } from 'react';
 import css from './Movies.module.css';
 
-export const Movies = () => {
+ const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
@@ -63,3 +63,5 @@ export const Movies = () => {
     </div>
   );
 };
+
+export default Movies;

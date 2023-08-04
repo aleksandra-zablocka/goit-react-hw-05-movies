@@ -3,7 +3,7 @@ import { fetchCast } from 'api';
 import { useParams } from 'react-router-dom';
 import css from './Cast.module.css';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const [cast, setCast] = useState([]);
@@ -25,8 +25,8 @@ export const Cast = () => {
 
   const imageUrlBase = 'https://image.tmdb.org/t/p/';
   const imageSize = 'w200';
-  const actorWithPhotos = cast.filter(actor => actor.profile_path !== null)
-  console.log('Lista aktorów:', cast);
+  const actorWithPhotos = cast.filter(actor => actor.profile_path !== null);
+  // console.log('Lista aktorów:', cast);
 
   return (
     <div className={css.wrapper}>
@@ -47,3 +47,5 @@ export const Cast = () => {
     </div>
   );
 };
+
+export default Cast;
